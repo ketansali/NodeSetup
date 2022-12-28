@@ -1,0 +1,634 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0",
+    "title": "Student App",
+    "contact": {}
+  },
+  "host": "student-api.mycodelibraries.com",
+  "basePath": "/api",
+  "schemes": ["https"],
+  "consumes": ["application/json"],
+  "produces": ["application/json"],
+  "paths": {
+    "/student/get": {
+      "get": {
+        "summary": "Get",
+        "tags": ["Student"],
+        "operationId": "Get",
+        "deprecated": false,
+        "produces": ["application/json"],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/student/get-student-by-id": {
+      "get": {
+        "summary": "Get Student By Id",
+        "tags": ["Student"],
+        "operationId": "GetStudentById",
+        "deprecated": false,
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/student/add": {
+      "post": {
+        "summary": "Add",
+        "tags": ["Student"],
+        "operationId": "Add",
+        "deprecated": false,
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/AddRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/student/update": {
+      "post": {
+        "summary": "Edit",
+        "tags": ["Student"],
+        "operationId": "Edit",
+        "deprecated": false,
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/EditRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/student/delete": {
+      "delete": {
+        "summary": "Delete",
+        "tags": ["Student"],
+        "operationId": "Delete",
+        "deprecated": false,
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/user/get": {
+      "get": {
+        "summary": "Get",
+        "tags": ["Users"],
+        "operationId": "Get1",
+        "deprecated": false,
+        "produces": ["application/json"],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/user/get-user-by-id": {
+      "get": {
+        "summary": "Get Employee By Id",
+        "tags": ["Users"],
+        "operationId": "GetEmployeeById",
+        "deprecated": false,
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/user/add": {
+      "post": {
+        "summary": "Add",
+        "tags": ["Users"],
+        "operationId": "PostAdd",
+        "deprecated": false,
+        "produces": ["application/json"],
+        "consumes": ["application/x-www-form-urlencoded"],
+        "parameters": [
+          {
+            "name": "firstName",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "lastName",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "age",
+            "in": "formData",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": ""
+          },
+          {
+            "name": "hobbies",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "gender",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "city",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "userImage",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/user/update": {
+      "post": {
+        "summary": "Edit",
+        "tags": ["Users"],
+        "operationId": "PostEdit",
+        "deprecated": false,
+        "produces": ["application/json"],
+        "consumes": ["application/x-www-form-urlencoded"],
+        "parameters": [
+          {
+            "name": "firstName",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "lastName",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "age",
+            "in": "formData",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": ""
+          },
+          {
+            "name": "hobbies",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "gender",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "city",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "id",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "userImage",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/user/delete": {
+      "delete": {
+        "summary": "Delete",
+        "tags": ["Users"],
+        "operationId": "Delete1",
+        "deprecated": false,
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/product/get": {
+      "get": {
+        "summary": "Get",
+        "tags": ["Product"],
+        "operationId": "Get12",
+        "deprecated": false,
+        "produces": ["application/json"],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/product/get-product-by-id": {
+      "get": {
+        "summary": "Get Product By Id",
+        "tags": ["Product"],
+        "operationId": "GetProductById",
+        "deprecated": false,
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/product/add": {
+      "post": {
+        "summary": "Add",
+        "tags": ["Product"],
+        "operationId": "PostAdd1",
+        "deprecated": false,
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/AddRequest1"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/product/update": {
+      "post": {
+        "summary": "Edit",
+        "tags": ["Product"],
+        "operationId": "PostEdit1",
+        "deprecated": false,
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/EditRequest1"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/product/delete": {
+      "delete": {
+        "summary": "Delete",
+        "tags": ["Product"],
+        "operationId": "Delete12",
+        "deprecated": false,
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "AddRequest": {
+      "title": "AddRequest",
+      "example": {
+        "firstName": "Shaikh",
+        "lastName": "Irshad",
+        "age": 1,
+        "hobbies": "Reading,Exersice",
+        "gender": "Male",
+        "city": "Surat"
+      },
+      "type": "object",
+      "properties": {
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "age": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "hobbies": {
+          "type": "string"
+        },
+        "gender": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        }
+      },
+      "required": ["firstName", "lastName", "age", "hobbies", "gender", "city"]
+    },
+    "EditRequest": {
+      "title": "EditRequest",
+      "example": {
+        "firstName": "Shaikhs",
+        "lastName": "Irshad",
+        "age": 1,
+        "hobbies": "Reading,Exersice",
+        "gender": "Male",
+        "city": "Surat",
+        "id": "612a05e155c2d838a4c62e5f"
+      },
+      "type": "object",
+      "properties": {
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "age": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "hobbies": {
+          "type": "string"
+        },
+        "gender": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "firstName",
+        "lastName",
+        "age",
+        "hobbies",
+        "gender",
+        "city",
+        "id"
+      ]
+    },
+    "AddRequest1": {
+      "title": "AddRequest1",
+      "example": {
+        "category": "Boys",
+        "productName": "Zara Shirt",
+        "description": "Cotton Shirt",
+        "price": 200,
+        "clothSize": "XL,L",
+        "inStock": "In Stock"
+      },
+      "type": "object",
+      "properties": {
+        "category": {
+          "type": "string"
+        },
+        "productName": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "price": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "clothSize": {
+          "type": "string"
+        },
+        "inStock": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "category",
+        "productName",
+        "description",
+        "price",
+        "clothSize",
+        "inStock"
+      ]
+    },
+    "EditRequest1": {
+      "title": "EditRequest1",
+      "example": {
+        "category": "Boys",
+        "productName": "Zara Shirt",
+        "description": "Cotton Shirt",
+        "price": 200,
+        "clothSize": "XL,L",
+        "inStock": "In Stock",
+        "id": "612c64f61927210cacac480f"
+      },
+      "type": "object",
+      "properties": {
+        "category": {
+          "type": "string"
+        },
+        "productName": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "price": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "clothSize": {
+          "type": "string"
+        },
+        "inStock": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "category",
+        "productName",
+        "description",
+        "price",
+        "clothSize",
+        "inStock",
+        "id"
+      ]
+    }
+  },
+  "tags": [
+    {
+      "name": "Student"
+    },
+    {
+      "name": "Users"
+    },
+    {
+      "name": "Product"
+    }
+  ]
+}

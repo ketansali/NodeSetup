@@ -1,0 +1,35 @@
+{
+  "name": "welders-math-api",
+  "version": "1.0.0",
+  "description": "Welders Math API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mayur-i2c/welders-math-api.git"
+  },
+  "author": "Dilip Kakadiya <dil.kakadiya@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mayur-i2c/welders-math-api/issues"
+  },
+  "homepage": "https://github.com/mayur-i2c/welders-math-api#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.2.1",
+    "express-swagger-generator": "^1.1.17",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.13.4",
+    "nodemailer": "^6.6.3",
+    "nodemon": "^2.0.12",
+    "path": "^0.12.7",
+    "swagger-ui-express": "^4.1.6"
+  }
+}
