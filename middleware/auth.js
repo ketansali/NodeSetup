@@ -1,23 +1,7 @@
 "use strict";
 const jwt = require("jsonwebtoken");
 
-const allowedUrls = [
-  "/login",
-  "/register",
-  "/change-password",
-  "/forget-password",
-  "/verify-otp",
-  "/send-mobile-otp",
-  "/verify-mobile-otp",
-  "/get-invitation-by-id",
-  "/activate-account",
-];
-const adminUrls = [];
-
 const ensureAuthorized = (req, res, next) => {
-  if (allowedUrls.indexOf(req.path.toLowerCase()) !== -1) {
-    return next();
-  }
   const bearerHeader = req.headers["authorization"];
   if (
     !(typeof bearerHeader !== "undefined" && process.env.secret) ||
@@ -38,15 +22,8 @@ const ensureAuthorized = (req, res, next) => {
         isSuccess: false,
       });
     } else {
-      if (adminUrls.indexOf(req.path) !== -1 && !decoded.isAdmin) {
-        return res.status(401).json({
-          message: "You are not allowed to access this api",
-          isSuccess: false,
-        });
-      } else {
-        req.user = decoded;
-        next();
-      }
+      req.user = decoded;
+      next();
     }
   });
 };

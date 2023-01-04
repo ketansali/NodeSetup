@@ -1,6 +1,6 @@
-'use strict'
+"use strict";
 
-const WHITE_LIST = ['http://localhost:4200', 'http://localhost:4200/']
+const WHITE_LIST = ["http://localhost:4200", "http://localhost:4200/"];
 
 module.exports = {
   // list of domaines have access
@@ -14,4 +14,4 @@ module.exports = {
   AUTH_CODE: 401,
   SERVICE_UNAVAILABLE: 503,
   NO_CONTENT: 204,
-}
+};
